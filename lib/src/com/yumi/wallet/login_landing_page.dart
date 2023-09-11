@@ -58,7 +58,7 @@ class _LoginLandingPageState extends State<LoginLandingPage> {
                 const SizedBox(height: 5),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(Routes.generateMemo);
+                      Navigator.of(context).pushNamed(Routes.loginPassword);
                     },
                     child: const SizedBox(
                       width: 120,

@@ -30,7 +30,7 @@ class _GenerateMemoPageState extends State<GenerateMemoPage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 32),
         //apply padding horizontal or vertical only
         child: Column(
           children: [
