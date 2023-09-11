@@ -1,4 +1,4 @@
-package com.walle.yumi.yumi
+package com.yumi.wallet
 
 import android.os.Build
 import android.os.Bundle

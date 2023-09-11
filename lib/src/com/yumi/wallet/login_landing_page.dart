@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:yumi/src/com/yumi/wallet/strings.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+import 'routes.dart';
+
+class LoginLandingPage extends StatefulWidget {
+  const LoginLandingPage({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return _LoginPageState();
+    return _LoginLandingPageState();
   }
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginLandingPageState extends State<LoginLandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         title: Text(
-          "YUMI",
+          Strings.applicationName,
           style: Theme.of(context).textTheme.headlineSmall,
           textAlign: TextAlign.center,
         ),
@@ -30,13 +33,13 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               const SizedBox(height: 20),
               Text(
-                '钱包设置',
+                Strings.walletSettings,
                 style: Theme.of(context).textTheme.titleLarge,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 10),
               Text(
-                "导入现有钱包或创建新钱包",
+                Strings.importOrCreateWallet,
                 style: Theme.of(context).textTheme.bodySmall,
                 textAlign: TextAlign.center,
               ),
@@ -50,16 +53,16 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () => {},
                     child: const SizedBox(
                       width: 120,
-                      child: Text("使用助记词导入", textAlign: TextAlign.center),
+                      child: Text(Strings.useMnemonicPhrase, textAlign: TextAlign.center),
                     )),
                 const SizedBox(height: 5),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed("/create_account");
+                      Navigator.of(context).pushNamed(Routes.generateMemo);
                     },
                     child: const SizedBox(
                       width: 120,
-                      child: Text("创建新钱包", textAlign: TextAlign.center),
+                      child: Text(Strings.createNewWallet, textAlign: TextAlign.center),
                     ))
               ],
             ),
