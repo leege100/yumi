@@ -20,7 +20,7 @@ class _LoginLandingPageState extends State<LoginLandingPage> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         title: Text(
-          Strings.applicationName,
+          Strings.appName,
           style: Theme.of(context).textTheme.headlineSmall,
           textAlign: TextAlign.center,
         ),
@@ -53,7 +53,7 @@ class _LoginLandingPageState extends State<LoginLandingPage> {
                     onPressed: () => {},
                     child: const SizedBox(
                       width: 120,
-                      child: Text(Strings.useMnemonicPhrase, textAlign: TextAlign.center),
+                      child: Text(Strings.importExistAccount, textAlign: TextAlign.center),
                     )),
                 const SizedBox(height: 5),
                 ElevatedButton(
@@ -62,7 +62,7 @@ class _LoginLandingPageState extends State<LoginLandingPage> {
                     },
                     child: const SizedBox(
                       width: 120,
-                      child: Text(Strings.createNewWallet, textAlign: TextAlign.center),
+                      child: Text(Strings.createNewAccount, textAlign: TextAlign.center),
                     ))
               ],
             ),

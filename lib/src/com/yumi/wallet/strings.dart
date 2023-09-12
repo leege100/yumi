@@ -1,16 +1,21 @@
 class Strings {
 
   /// common
-  static const String applicationName = "YUMI";
+  static const String appName = "YUMI";
   static const String nextStep = "下一步";
   static const String confirm = "确定";
   static const String finish = "完成";
 
+  /// assets
+  static const String asset = "资产";
+  static const String emptyAccountHint = "当前还未添加任何账户，请导入已有账户或创建新账户";
+
   /// login_lading_page
   static const String walletSettings = "钱包设置";
   static const String importOrCreateWallet = "导入现有钱包或者创建新钱包";
-  static const String useMnemonicPhrase = "使用助记词导入";
-  static const String createNewWallet = "创建新钱包";
+  static const String importExistAccount = "导入已有账户";
+  static const String createNewAccount = "创建新账户";
+  static const String addAccount = "添加账户";
 
   /// login_password
   static const String createPassword = "创建设备密码";
@@ -29,5 +34,5 @@ class Strings {
 
   /// create
   static const String writeDownYourMemo = "请写下你的助记词";
-  static const String memoPhraseDesc = "这是您的助记词，请将它写在纸上并存放在安全的地方。您将在下一步中重新输入此助记词（按顺序）。";
+  static const String memoPhraseDesc = "这是您的助记词，可以用来帮助您恢复账户，请将它们按顺序写在纸上并存放在安全的地方。";
 }

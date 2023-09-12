@@ -24,7 +24,7 @@ class _GenerateMemoPageState extends State<GenerateMemoPage> {
         backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
-          Strings.applicationName,
+          Strings.appName,
           style: Theme.of(context).textTheme.headlineSmall,
           textAlign: TextAlign.center,
         ),
@@ -57,7 +57,9 @@ class _GenerateMemoPageState extends State<GenerateMemoPage> {
                 borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                 border: Border.all(width: 1, color: Colors.grey),
               ),
-              child: Text(_memo),
+              child: Text(_memo,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  textScaleFactor: 1.2),
             ),
             const SizedBox(height: 60),
             ElevatedButton(

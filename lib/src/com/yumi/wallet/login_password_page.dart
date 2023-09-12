@@ -25,7 +25,7 @@ class _LoginPasswordPageState extends State<LoginPasswordPage> {
         backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
-          Strings.applicationName,
+          Strings.appName,
           style: Theme.of(context).textTheme.headlineSmall,
           textAlign: TextAlign.center,
         ),
@@ -135,7 +135,7 @@ class _LoginPasswordPageState extends State<LoginPasswordPage> {
                     );
                     return;
                   }
-                  Navigator.of(context).pushNamed(Routes.generateMemo);
+                  Navigator.popAndPushNamed(context, Routes.home);
                 },
                 child: const SizedBox(
                   width: double.infinity,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yumi/src/com/yumi/wallet/home_page.dart';
 import 'package:yumi/src/com/yumi/wallet/login_landing_page.dart';
 import 'package:yumi/src/com/yumi/wallet/login_password_page.dart';
 import 'package:yumi/src/com/yumi/wallet/routes.dart';
@@ -18,11 +19,12 @@ class YumiApp extends StatelessWidget {
     return MaterialApp(
       title: 'Yumi',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
         useMaterial3: true,
       ),
-      home: hasCreatedPassword ? const LoginLandingPage() : const LoginPasswordPage(),
+      home: hasCreatedPassword ? const HomePage() : const LoginPasswordPage(),
       routes: <String, WidgetBuilder> {
+        Routes.home : (context) => const HomePage(),
         Routes.loginLanding : (context) => const LoginLandingPage(),
         Routes.generateMemo : (context) => const GenerateMemoPage(),
         Routes.loginPassword : (context) => const LoginPasswordPage(),
