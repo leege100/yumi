@@ -4,6 +4,7 @@ import 'package:yumi/src/com/yumi/wallet/login_landing_page.dart';
 import 'package:yumi/src/com/yumi/wallet/login_password_page.dart';
 import 'package:yumi/src/com/yumi/wallet/routes.dart';
 
+import 'confirm_mnemonic_page.dart';
 import 'generate_mnemonic_page.dart';
 
 void main() {
@@ -28,6 +29,7 @@ class YumiApp extends StatelessWidget {
         Routes.loginLanding : (context) => const LoginLandingPage(),
         Routes.generateMnemonic : (context) => const GenerateMnemonicPage(),
         Routes.loginPassword : (context) => const LoginPasswordPage(),
+        Routes.confirmMnemonic : (context) => const ConfirmMnemonicPage(),
       },
     );
   }

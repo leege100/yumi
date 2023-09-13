@@ -36,5 +36,6 @@ class Strings {
   static const String writeDownYourMnemonic = "请写下你的助记词";
   static const String mnemonicPhraseDesc = "这是您的助记词，可以用来帮助您恢复账户，请将它们按顺序写在纸上并存放在安全的地方。";
   static const String confirmYourMnemonic = "确认助记词";
+  static const String confirmYourMnemonicHint = "按照之前的呈现的顺序选择每个字词";
 
 }

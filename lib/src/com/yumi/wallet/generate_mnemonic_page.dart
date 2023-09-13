@@ -1,5 +1,6 @@
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:flutter/material.dart';
+import 'package:yumi/src/com/yumi/wallet/routes.dart';
 import 'package:yumi/src/com/yumi/wallet/strings.dart';
 
 class GenerateMnemonicPage extends StatefulWidget {
@@ -64,6 +65,7 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
             const SizedBox(height: 60),
             ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).pushNamed(Routes.confirmMnemonic);
                 },
                 child: const SizedBox(
                   width: double.infinity,
