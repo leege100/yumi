@@ -33,6 +33,8 @@ class Strings {
   static const String passwordShouldSame = "两次输入的密码不一致，请重新输入";
 
   /// create
-  static const String writeDownYourMemo = "请写下你的助记词";
-  static const String memoPhraseDesc = "这是您的助记词，可以用来帮助您恢复账户，请将它们按顺序写在纸上并存放在安全的地方。";
+  static const String writeDownYourMnemonic = "请写下你的助记词";
+  static const String mnemonicPhraseDesc = "这是您的助记词，可以用来帮助您恢复账户，请将它们按顺序写在纸上并存放在安全的地方。";
+  static const String confirmYourMnemonic = "确认助记词";
+
 }

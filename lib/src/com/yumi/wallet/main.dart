@@ -4,7 +4,7 @@ import 'package:yumi/src/com/yumi/wallet/login_landing_page.dart';
 import 'package:yumi/src/com/yumi/wallet/login_password_page.dart';
 import 'package:yumi/src/com/yumi/wallet/routes.dart';
 
-import 'generate_memo_page.dart';
+import 'generate_mnemonic_page.dart';
 
 void main() {
   runApp(YumiApp());
@@ -26,7 +26,7 @@ class YumiApp extends StatelessWidget {
       routes: <String, WidgetBuilder> {
         Routes.home : (context) => const HomePage(),
         Routes.loginLanding : (context) => const LoginLandingPage(),
-        Routes.generateMemo : (context) => const GenerateMemoPage(),
+        Routes.generateMnemonic : (context) => const GenerateMnemonicPage(),
         Routes.loginPassword : (context) => const LoginPasswordPage(),
       },
     );

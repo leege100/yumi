@@ -2,16 +2,16 @@ import 'package:bip39/bip39.dart' as bip39;
 import 'package:flutter/material.dart';
 import 'package:yumi/src/com/yumi/wallet/strings.dart';
 
-class GenerateMemoPage extends StatefulWidget {
-  const GenerateMemoPage({super.key});
+class GenerateMnemonicPage extends StatefulWidget {
+  const GenerateMnemonicPage({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return _GenerateMemoPageState();
+    return _GenerateMnemonicPageState();
   }
 }
 
-class _GenerateMemoPageState extends State<GenerateMemoPage> {
+class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
 
   String _memo = "";
 
@@ -36,13 +36,13 @@ class _GenerateMemoPageState extends State<GenerateMemoPage> {
           children: [
             const SizedBox(height: 20),
             Text(
-              Strings.writeDownYourMemo,
+              Strings.writeDownYourMnemonic,
               style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 15),
             Text(
-              Strings.memoPhraseDesc,
+              Strings.mnemonicPhraseDesc,
               style: Theme.of(context).textTheme.bodySmall,
               textAlign: TextAlign.start,
             ),

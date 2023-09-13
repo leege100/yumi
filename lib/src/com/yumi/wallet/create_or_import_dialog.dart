@@ -38,7 +38,7 @@ class CreateOrImportDialog extends StatelessWidget {
           margin: const EdgeInsets.only(top: 10, left: 30, right: 30),
           child: ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(Routes.generateMemo);
+                Navigator.of(context).pushNamed(Routes.generateMnemonic);
               },
               child: const SizedBox(
                 width: double.infinity,
