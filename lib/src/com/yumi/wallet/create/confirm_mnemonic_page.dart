@@ -13,11 +13,16 @@ class ConfirmMnemonicPage extends StatefulWidget {
 
 class _ConfirmMnemonicPageState extends State<ConfirmMnemonicPage> {
 
-  String _memo = "";
+  late String _memo;
+
+
+  @override
+  void initState() {
+    _memo = ModalRoute.of(context)!.settings.arguments as String;
+  }
 
   @override
   Widget build(BuildContext context) {
-    _memo = bip39.generateMnemonic();
     List<String> _memoString = _memo.split(" ");
     return Scaffold(
       appBar: AppBar(

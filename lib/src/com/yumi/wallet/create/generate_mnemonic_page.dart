@@ -51,7 +51,7 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
               padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               alignment: const Alignment(0, 0),
               width: double.infinity,
-              height: 385,
+              height: 325,
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: const BorderRadius.all(Radius.circular(5.0)),
@@ -60,8 +60,8 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
               child: GridView(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisExtent: 60,
+                  crossAxisSpacing: 5,
+                  mainAxisExtent: 50,
                 ),
                 children: [
                   MnemonicItem(1, _memoString[0]),
@@ -82,7 +82,7 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
             const SizedBox(height: 40),
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(Routes.confirmMnemonic);
+                  Navigator.of(context).pushNamed(Routes.confirmMnemonic, arguments: _memo);
                 },
                 child: const SizedBox(
                   width: double.infinity,
@@ -105,7 +105,7 @@ class MnemonicItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.only(top: 15),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         alignment: const Alignment(0, 0),
         width: double.infinity,
         height: 40,
