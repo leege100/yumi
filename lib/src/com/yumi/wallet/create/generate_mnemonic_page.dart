@@ -13,7 +13,6 @@ class GenerateMnemonicPage extends StatefulWidget {
 }
 
 class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
-
   String _memo = "";
 
   @override
@@ -41,7 +40,7 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
               style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 30),
             Text(
               Strings.mnemonicPhraseDesc,
               style: Theme.of(context).textTheme.bodySmall,
@@ -49,20 +48,38 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
             ),
             Container(
               margin: const EdgeInsets.only(top: 15),
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               alignment: const Alignment(0, 0),
-              height: 300,
               width: double.infinity,
+              height: 385,
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                 border: Border.all(width: 1, color: Colors.grey),
               ),
-              child: Text(_memo,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                  textScaleFactor: 1.2),
+              child: GridView(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10,
+                  mainAxisExtent: 60,
+                ),
+                children: [
+                  MnemonicItem(1, _memoString[0]),
+                  MnemonicItem(2, _memoString[1]),
+                  MnemonicItem(3, _memoString[2]),
+                  MnemonicItem(4, _memoString[3]),
+                  MnemonicItem(5, _memoString[4]),
+                  MnemonicItem(6, _memoString[5]),
+                  MnemonicItem(7, _memoString[6]),
+                  MnemonicItem(8, _memoString[7]),
+                  MnemonicItem(9, _memoString[8]),
+                  MnemonicItem(10, _memoString[9]),
+                  MnemonicItem(11, _memoString[10]),
+                  MnemonicItem(12, _memoString[11]),
+                ],
+              ),
             ),
-            const SizedBox(height: 60),
+            const SizedBox(height: 40),
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed(Routes.confirmMnemonic);
@@ -75,5 +92,33 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
         ),
       ),
     );
+  }
+}
+
+class MnemonicItem extends StatelessWidget {
+  final int _index;
+  final String _text;
+
+  const MnemonicItem(this._index, this._text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: const EdgeInsets.only(top: 15),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        alignment: const Alignment(0, 0),
+        width: double.infinity,
+        height: 40,
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+          border: Border.all(width: 1, color: Colors.grey),
+        ),
+        child: Text(
+          "$_index.  $_text",
+          style: Theme.of(context).textTheme.bodyMedium,
+          textScaleFactor: 1.1,
+          textAlign: TextAlign.center,
+        ));
   }
 }

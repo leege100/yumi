@@ -4,8 +4,8 @@ import 'package:yumi/src/com/yumi/wallet/login_landing_page.dart';
 import 'package:yumi/src/com/yumi/wallet/login_password_page.dart';
 import 'package:yumi/src/com/yumi/wallet/routes.dart';
 
-import 'confirm_mnemonic_page.dart';
-import 'generate_mnemonic_page.dart';
+import 'create/confirm_mnemonic_page.dart';
+import 'create/generate_mnemonic_page.dart';
 
 void main() {
   runApp(YumiApp());

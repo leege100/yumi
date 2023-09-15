@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:yumi/src/com/yumi/wallet/strings.dart';
 
-import 'create_or_import_dialog.dart';
+import 'create/create_or_import_dialog.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
