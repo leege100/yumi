@@ -18,7 +18,7 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
   @override
   Widget build(BuildContext context) {
     _memo = bip39.generateMnemonic();
-    List<String> _memoString = _memo.split(" ");
+    List<String> memoString = _memo.split(" ");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -57,27 +57,17 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
                 borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                 border: Border.all(width: 1, color: Colors.grey),
               ),
-              child: GridView(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 5,
-                  mainAxisExtent: 50,
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisExtent: 50,
+                  ),
+                  itemCount: memoString.length,
+                  itemBuilder: (context, index) {
+                    return _MnemonicItem(index, memoString[index]);
+                  },
                 ),
-                children: [
-                  MnemonicItem(1, _memoString[0]),
-                  MnemonicItem(2, _memoString[1]),
-                  MnemonicItem(3, _memoString[2]),
-                  MnemonicItem(4, _memoString[3]),
-                  MnemonicItem(5, _memoString[4]),
-                  MnemonicItem(6, _memoString[5]),
-                  MnemonicItem(7, _memoString[6]),
-                  MnemonicItem(8, _memoString[7]),
-                  MnemonicItem(9, _memoString[8]),
-                  MnemonicItem(10, _memoString[9]),
-                  MnemonicItem(11, _memoString[10]),
-                  MnemonicItem(12, _memoString[11]),
-                ],
-              ),
             ),
             const SizedBox(height: 40),
             ElevatedButton(
@@ -95,11 +85,11 @@ class _GenerateMnemonicPageState extends State<GenerateMnemonicPage> {
   }
 }
 
-class MnemonicItem extends StatelessWidget {
+class _MnemonicItem extends StatelessWidget {
   final int _index;
   final String _text;
 
-  const MnemonicItem(this._index, this._text, {super.key});
+  const _MnemonicItem(this._index, this._text, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +105,7 @@ class MnemonicItem extends StatelessWidget {
           border: Border.all(width: 1, color: Colors.grey),
         ),
         child: Text(
-          "$_index.  $_text",
+          "${_index+1}.  $_text",
           style: Theme.of(context).textTheme.bodyMedium,
           textScaleFactor: 1.1,
           textAlign: TextAlign.center,

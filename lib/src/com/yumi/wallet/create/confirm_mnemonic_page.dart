@@ -1,4 +1,3 @@
-import 'package:bip39/bip39.dart' as bip39;
 import 'package:flutter/material.dart';
 import 'package:yumi/src/com/yumi/wallet/strings.dart';
 
@@ -13,17 +12,23 @@ class ConfirmMnemonicPage extends StatefulWidget {
 
 class _ConfirmMnemonicPageState extends State<ConfirmMnemonicPage> {
 
-  late String _memo;
+  String _mnemonic = "";
+  List<String> _memoString = [];
+  bool _initMnemonic = false;
 
 
   @override
   void initState() {
-    _memo = ModalRoute.of(context)!.settings.arguments as String;
   }
 
   @override
   Widget build(BuildContext context) {
-    List<String> _memoString = _memo.split(" ");
+    if (!_initMnemonic) {
+      _mnemonic = ModalRoute.of(context)!.settings.arguments as String;
+      _memoString = _mnemonic.split(" ");
+      _initMnemonic = true;
+    }
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -63,7 +68,25 @@ class _ConfirmMnemonicPageState extends State<ConfirmMnemonicPage> {
                 border: Border.all(width: 1, color: Colors.grey),
               ),
             ),
-            const SizedBox(height: 60),
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              alignment: const Alignment(0, 0),
+              width: double.infinity,
+              height: 190,
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 6,
+                  mainAxisSpacing: 10,
+                  mainAxisExtent: 36,
+                ),
+                itemCount: _memoString.length,
+                itemBuilder: (context, index) {
+                  return _MnemonicItem(_memoString[index]);
+                },
+              ),
+            ),
+            const SizedBox(height: 10),
             ElevatedButton(
                 onPressed: () {
                 },
@@ -75,5 +98,31 @@ class _ConfirmMnemonicPageState extends State<ConfirmMnemonicPage> {
         ),
       ),
     );
+  }
+}
+
+class _MnemonicItem extends StatelessWidget {
+  final String _text;
+
+  const _MnemonicItem(this._text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+        alignment: const Alignment(0, 0),
+        width: double.infinity,
+        height: 30,
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+          border: Border.all(width: 1, color: Colors.lightBlue),
+        ),
+        child: Text(
+          _text,
+          style: Theme.of(context).textTheme.bodyMedium,
+          textScaleFactor: 1.0,
+          textAlign: TextAlign.center,
+        ));
   }
 }
